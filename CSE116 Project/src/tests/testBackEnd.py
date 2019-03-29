@@ -8,7 +8,7 @@ class TestBackEnd(unittest.TestCase):
         y = "How many squares are there in the picture?"
         z = "What was the first shape in the picture?"
         # qDict = {x: 1, y: 2, z: 1}
-        # Johnson also worked on this unit testing with me, his laptop just died while we were working test
+        # Johnson also worked on this unit testing with me, his laptop just died while we were working
         self.assertEqual(backend.getName(playerNames), ["Justin", "Johnson", "Melinda"])
         self.assertEqual(backend.checkPlayersAmountLeft(playerNames), 3)
         self.assertIn(backend.askQuestion(), [(x, 1), (y, 2), (z, 1)])
