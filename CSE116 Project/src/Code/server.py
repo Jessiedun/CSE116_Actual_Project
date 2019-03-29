@@ -11,7 +11,7 @@ def index():
 def helloworld():
     return "Hello world!"
 
-@bottle.route("/whoseplaying") # 127.0.0.1/whoseplaying
+@bottle.route("/whoseplaying") # 127.0.0.1/whoseplaying lol
 def readpoints():
     with open('savefile.txt') as f:
         for line in f:

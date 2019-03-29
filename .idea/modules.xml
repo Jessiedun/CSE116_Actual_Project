@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CS116Project.iml" filepath="$PROJECT_DIR$/CS116Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CSE116 Project/src/scala-module-dependency-sample.iml" filepath="$PROJECT_DIR$/CSE116 Project/src/scala-module-dependency-sample.iml" />
     </modules>
   </component>
 </project>
