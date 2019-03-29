@@ -3,13 +3,16 @@ from bottle import request
 import csv
 import json
 
+
 @bottle.route('/')
 def index():
     return bottle.static_file("index.html", root = "")
 
+
 @bottle.route('/helloworld')
 def helloworld():
     return "Hello world!"
+
 
 @bottle.route("/whoseplaying") # 127.0.0.1/whoseplaying
 def readpoints():
@@ -17,6 +20,7 @@ def readpoints():
         for line in f:
             print(line)
             #in console
+
 
 @bottle.route('/setpoints')
 def setpoints():
@@ -31,6 +35,7 @@ def setpoints():
     csvwriter.writerow([username,points])
     return "Added {} username with {} points".format(username,points)
 
+
 @bottle.route('/points')
 def points():
     # Return string with peoples usernames and points
@@ -39,5 +44,6 @@ def points():
     for i in file:
         combinedstring+=i
     return json.dumps(combinedstring)
+
 
 bottle.run(host="localhost", port=8080, debug= True)
