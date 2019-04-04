@@ -6,7 +6,6 @@ import scalafx.scene.canvas.GraphicsContext
 
 class Player(var img: Image, var initPos: util){
 
-
   def moveUp(): Unit ={
     if(initPos.y - 5 >= 0) initPos -= new util(0,5)
   }
