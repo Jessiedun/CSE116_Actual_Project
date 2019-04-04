@@ -26,17 +26,19 @@ import scalafx.scene.text.Text
 
 object GUI extends JFXApp{
   stage = new JFXApp.PrimaryStage {
-    //    g.fillRect(0, 0, 300, 300) //black rectangle
-    scene = new Scene(600, 600) {
+                              //pixels of the background image
+    scene = new Scene(714, 260) {
       title = "Retro Quiz"
-      var canvas = new Canvas(600, 600)
+      var canvas = new Canvas(714, 260)
       var g: GraphicsContext = canvas.getGraphicsContext2D
-          var image = new Image("file:images/mario.png")
-      var player = new Player(new Image("file:images/thanos.png"), new util(275, 550))
+      var mario = new Image("file:images/mario.jpg")                      // x,   y
+      var player = new Player(new Image("file:images/thanos.png"), new util(275, 200))
+
       var right = false
       var left = false
       var up = false
       var down = false
+
       val playerLogin: TextInputDialog = new TextInputDialog(defaultValue = "") {
         initOwner(stage)
         title = "Enter Your Username"
@@ -48,10 +50,10 @@ object GUI extends JFXApp{
         case Some(name) => println("Your name: " + name)
         case None => println("Dialog was canceled")
       }
-      //      }
+
       var timer = AnimationTimer(t =>{
-
-
+                                      //change last two numbers according to pixel size of image
+        g.drawImage(mario, 0.0, 0.0, 714, 260)
         fill = LightBlue
         //      content = new Rectangle {
         //        x = 12.5
@@ -60,21 +62,21 @@ object GUI extends JFXApp{
         //        height = 50
 
       onKeyPressed = (e:KeyEvent) => {
+        if(e.code.toString() == "RIGHT") right = true
         if(e.code.toString() == "UP") up = true
         if(e.code.toString() == "DOWN") down = true
         if(e.code.toString() == "LEFT") left = true
-        if(e.code.toString() == "RIGHT") right = true
       }
       onKeyReleased = (e:KeyEvent) => {
+        if(e.code.toString() == "RIGHT") right = false
         if(e.code.toString() == "UP") up = false
         if(e.code.toString() == "DOWN") down = false
         if(e.code.toString() == "LEFT") left = false
-        if(e.code.toString() == "RIGHT") right = false
       }
-      if(up) player.moveUp()
-      if(down) player.moveDown()
-      if(left) player.moveLeft()
-      if(right) player.moveRight()
+        if(right) player.moveRight()
+        if(up) player.moveUp()
+        if(down) player.moveDown()
+        if(left) player.moveLeft()
 
       player.display(g)
 

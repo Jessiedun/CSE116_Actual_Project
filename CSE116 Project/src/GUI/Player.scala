@@ -7,18 +7,20 @@ import scalafx.scene.canvas.GraphicsContext
 class Player(var img: Image, var initPos: util){
 
   def moveUp(): Unit ={
-    if(initPos.y - 5 >= 0) initPos -= new util(0,5)
+                 // Boundaries
+    if(initPos.y - 0 >= 0) initPos -= new util(0,5)
   }
   def moveDown(): Unit ={
-    if(initPos.y + 5 <= 550) initPos += new util(0,5)
+    if(initPos.y + 0 <= 200) initPos += new util(0,5)
   }
   def moveLeft(): Unit ={
-    if(initPos.x - 5 >= 0) initPos -= new util(5,0)
+    if(initPos.x - 0 >= 0) initPos -= new util(5,0)
   }
   def moveRight(): Unit ={
-    if(initPos.x + 5 >= 550) initPos -= new util(5,0)
+    if(initPos.x + 0 <= 650) initPos += new util(5,0)
   }
   def display(g: GraphicsContext): Unit ={
-    g.drawImage(img, initPos.x, initPos.y, 50,50)
+    g.drawImage(img, initPos.x, initPos.y, 60, 60)
+                                  // how big picture is
   }
 }
