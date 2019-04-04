@@ -16,7 +16,7 @@ class Player(var img: Image, var initPos: util){
     if(initPos.x - 5 >= 0) initPos -= new util(5,0)
   }
   def moveRight(): Unit ={
-    if(initPos.x + 5 >= 550) initPos -= new util(5,0)
+    if(initPos.x + 5 <= 550) initPos += new util(5,0)
   }
   def display(g: GraphicsContext): Unit ={
     g.drawImage(img, initPos.x, initPos.y, 50,50)
