@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/cse116.iml" filepath="$PROJECT_DIR$/cse116.iml" />
       <module fileurl="file://$PROJECT_DIR$/scala-module-dependency-sample.iml" filepath="$PROJECT_DIR$/scala-module-dependency-sample.iml" />
     </modules>
   </component>

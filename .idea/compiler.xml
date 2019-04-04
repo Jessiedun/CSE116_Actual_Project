@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="scala-module-dependency-sample" />
+        <module name="cse116" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cse116" target="1.5" />
       <module name="scala-module-dependency-sample" target="1.5" />
     </bytecodeTargetLevel>
   </component>
