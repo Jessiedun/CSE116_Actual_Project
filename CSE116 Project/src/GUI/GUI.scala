@@ -32,7 +32,7 @@ object GUI extends JFXApp{
       var canvas = new Canvas(714, 260)
       var g: GraphicsContext = canvas.getGraphicsContext2D
       var mario = new Image("file:images/mario.jpg")                      // x,   y
-      var player = new Player(new Image("file:images/thanos.png"), new util(275, 200))
+      var player = new Player(new Image("file:images/thanos.png"), new Vector(275, 200))
 
       var right = false
       var left = false
