@@ -29,6 +29,7 @@ object GUI extends JFXApp{
                               //pixels of the background image
     scene = new Scene(714, 260) {
       title = "Retro Quiz"
+
       var canvas = new Canvas(714, 260)
       var g: GraphicsContext = canvas.getGraphicsContext2D
       var mario = new Image("file:images/mario.jpg")                      // x,   y
@@ -52,31 +53,27 @@ object GUI extends JFXApp{
       }
 
       var timer = AnimationTimer(t =>{
-                                      //change last two numbers according to pixel size of image
-        g.drawImage(mario, 0.0, 0.0, 714, 260)
-        fill = LightBlue
-        //      content = new Rectangle {
-        //        x = 12.5
-        //        y = 20
-        //        width = 50
-        //        height = 50
 
+        //change last two numbers according to pixel size of image
+        g.drawImage(mario, 0.0, 0.0, 714, 260)
+
+        fill = LightBlue
       onKeyPressed = (e:KeyEvent) => {
-        if(e.code.toString() == "RIGHT") right = true
         if(e.code.toString() == "UP") up = true
         if(e.code.toString() == "DOWN") down = true
         if(e.code.toString() == "LEFT") left = true
-      }
+        if(e.code.toString() == "RIGHT") right = true
+        }
       onKeyReleased = (e:KeyEvent) => {
-        if(e.code.toString() == "RIGHT") right = false
         if(e.code.toString() == "UP") up = false
         if(e.code.toString() == "DOWN") down = false
         if(e.code.toString() == "LEFT") left = false
+        if(e.code.toString() == "RIGHT") right = false
       }
-        if(right) player.moveRight()
         if(up) player.moveUp()
         if(down) player.moveDown()
         if(left) player.moveLeft()
+        if(right) player.moveRight()
 
       player.display(g)
 
