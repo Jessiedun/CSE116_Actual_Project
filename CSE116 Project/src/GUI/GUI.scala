@@ -1,6 +1,6 @@
 package GUI
 
-import scalafx.application
+import javafx.scene.canvas.GraphicsContext
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
 import scalafx.scene.canvas.Canvas
@@ -29,31 +29,31 @@ object GUI extends JFXApp{
     scene = new Scene(600, 600) {
       title = "Retro Quiz"
       var canvas = new Canvas(600, 600)
-      var g = canvas.getGraphicsContext2D
-      //    var image = new Image("file:images")
+      var g: GraphicsContext = canvas.getGraphicsContext2D
+          var image = new Image("file:images/mario.png")
       var player = new Player(new Image("file:images/thanos.png"), new util(275, 550))
       var right = false
       var left = false
       var up = false
       var down = false
-      fill = LightGreen
-      content = new Rectangle {
-        x = 12.5
-        y = 20
-        width = 50
-        height = 50
+      fill = LightBlue
+//      content = new Rectangle {
+//        x = 12.5
+//        y = 20
+//        width = 50
+//        height = 50
+//      }
+      val playerlogin = new TextInputDialog(defaultValue = "") {
+        initOwner(stage)
+        title = "Enter Your Username"
+        headerText = "Enter Your Username"
+        contentText = "Please Enter Your Name Here"
       }
-//      val playerlogin = new TextInputDialog(defaultValue = "") {
-//        initOwner(stage)
-//        title = "Enter Your Username"
-//        headerText = "Enter Your Username"
-//        contentText = "Please Enter Your Name Here"
-//      }
-//      val result = playerlogin.showAndWait()
-//      result match {
-//        case Some(name) => println("Your name: " + name)
-//        case None => println("Dialog was canceled")
-//      }
+      val result = playerlogin.showAndWait()
+      result match {
+        case Some(name) => println("Your name: " + name)
+        case None => println("Dialog was canceled")
+      }
 
       onKeyPressed = (e:KeyEvent) => {
         if(e.code.toString() == "UP") up = true
@@ -80,3 +80,5 @@ object GUI extends JFXApp{
     }
   }
 }
+
+
