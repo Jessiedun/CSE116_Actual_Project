@@ -62,6 +62,7 @@ object GUI extends JFXApp{
 
         //change last two numbers according to pixel size of image
         g.drawImage(mario, 0.0, 0.0, 1428, 520)
+        g.setFill(Cyan)
         g.fillRect(40, 200, 120, 120)
         g.fillRect(1270, 200, 120, 120)
 
