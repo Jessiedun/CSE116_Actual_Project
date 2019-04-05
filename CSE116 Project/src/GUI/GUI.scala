@@ -46,17 +46,17 @@ object GUI extends JFXApp{
       var up = false
       var down = false
 
-//      val playerLogin: TextInputDialog = new TextInputDialog(defaultValue = "") {
-//        initOwner(stage)
-//        title = "Enter Your Username"
-//        headerText = "Enter Your Username"
-//        contentText = "Please Enter Your Name Here"
-//      }
-//      val result: Option[String] = playerLogin.showAndWait()
-//      result match {
-//        case Some(name) => println("Your name: " + name)
-//        case None => println("Dialog was canceled")
-//      }
+      val playerLogin: TextInputDialog = new TextInputDialog(defaultValue = "") {
+        initOwner(stage)
+        title = "Enter Your Username"
+        headerText = "Enter Your Username"
+        contentText = "Please Enter Your Name Here"
+      }
+      val result: Option[String] = playerLogin.showAndWait()
+      result match {
+        case Some(name) => println("Your name: " + name)
+        case None => println("Dialog was canceled")
+      }
 
       var timer = AnimationTimer(t =>{
 
