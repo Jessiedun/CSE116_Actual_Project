@@ -25,37 +25,45 @@ import scalafx.scene.text.Text
 
 
 object GUI extends JFXApp{
+  def initialPosX(x:Int): Int ={
+    x
+  }
+  def initialPosY(y: Int): Int= {
+    y
+  }
   stage = new JFXApp.PrimaryStage {
                               //pixels of the background image
-    scene = new Scene(714, 260) {
+    scene = new Scene(1428, 520) {
       title = "Retro Quiz"
 
-      var canvas = new Canvas(714, 260)
+      var canvas = new Canvas(1428, 520)
       var g: GraphicsContext = canvas.getGraphicsContext2D
       var mario = new Image("file:images/mario.jpg")                      // x,   y
-      var player = new Player(new Image("file:images/thanos.png"), new Vector(275, 200))
+      var player = new Player(new Image("file:images/thanos.png"), new Vector(initialPosX(275), initialPosY(200)))
 
       var right = false
       var left = false
       var up = false
       var down = false
 
-      val playerLogin: TextInputDialog = new TextInputDialog(defaultValue = "") {
-        initOwner(stage)
-        title = "Enter Your Username"
-        headerText = "Enter Your Username"
-        contentText = "Please Enter Your Name Here"
-      }
-      val result: Option[String] = playerLogin.showAndWait()
-      result match {
-        case Some(name) => println("Your name: " + name)
-        case None => println("Dialog was canceled")
-      }
+//      val playerLogin: TextInputDialog = new TextInputDialog(defaultValue = "") {
+//        initOwner(stage)
+//        title = "Enter Your Username"
+//        headerText = "Enter Your Username"
+//        contentText = "Please Enter Your Name Here"
+//      }
+//      val result: Option[String] = playerLogin.showAndWait()
+//      result match {
+//        case Some(name) => println("Your name: " + name)
+//        case None => println("Dialog was canceled")
+//      }
 
       var timer = AnimationTimer(t =>{
 
         //change last two numbers according to pixel size of image
-        g.drawImage(mario, 0.0, 0.0, 714, 260)
+        g.drawImage(mario, 0.0, 0.0, 1428, 520)
+        g.fillRect(40, 200, 120, 120)
+        g.fillRect(1270, 200, 120, 120)
 
         fill = LightBlue
       onKeyPressed = (e:KeyEvent) => {
@@ -82,6 +90,7 @@ object GUI extends JFXApp{
       timer.start
 
       content = canvas
+      println(player.initPos)
     }
   }
 }
