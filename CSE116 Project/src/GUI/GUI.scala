@@ -29,8 +29,25 @@ object GUI extends JFXApp{
                               //pixels of the background image
     scene = new Scene(714, 260) {
       title = "Retro Quiz"
+/*
+      val leftRectangle= new Rectangle {
+        x = 35
+        y = 50
+        width = 125
+        height = 125
+        fill = Cyan
 
+      }
+      val rightRectangle= new Rectangle{
+        x = 315
+        y =  50
+        width = 125
+        height = 125
+        fill = LightGreen
+      }
+*/
       var canvas = new Canvas(714, 260)
+
       var g: GraphicsContext = canvas.getGraphicsContext2D
       var mario = new Image("file:images/mario.jpg")                      // x,   y
       var player = new Player(new Image("file:images/thanos.png"), new Vector(275, 200))
@@ -57,6 +74,11 @@ object GUI extends JFXApp{
         //change last two numbers according to pixel size of image
         g.drawImage(mario, 0.0, 0.0, 714, 260)
 
+        g.setFill(Cyan)
+        g.fillRect(75, 45, 125, 125)
+        g.fillRect(475, 45, 125, 125)
+
+        //        g.fillRect(0, 130, 50, 50)
         fill = LightBlue
       onKeyPressed = (e:KeyEvent) => {
         if(e.code.toString() == "UP") up = true
@@ -77,11 +99,11 @@ object GUI extends JFXApp{
 
       player.display(g)
 
-
      })
       timer.start
 
       content = canvas
+      //content =  List(canvas, leftRectangle, rightRectangle)
     }
   }
 }
