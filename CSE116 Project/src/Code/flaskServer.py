@@ -82,8 +82,4 @@ def points():
     return json.dumps(combinedstring)
 
 
-
-
-
-
 socket_server.run(app, port=8080)

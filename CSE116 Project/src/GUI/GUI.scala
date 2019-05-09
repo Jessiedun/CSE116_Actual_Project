@@ -1,27 +1,15 @@
 package GUI
 
 import javafx.scene.canvas.GraphicsContext
-import scalafx.application.JFXApp
-import scalafx.scene.Scene
 import scalafx.scene.canvas.Canvas
 import scalafx.Includes._
 import scalafx.animation.AnimationTimer
 import scalafx.scene.control.TextInputDialog
-import scalafx.scene.paint.Color._
-import scalafx.scene.shape.Rectangle
 import scalafx.application.JFXApp
-import scalafx.application.JFXApp.PrimaryStage
-import scalafx.geometry.Insets
 import scalafx.scene.Scene
 import scalafx.scene.image.Image
-import scalafx.scene.effect.DropShadow
-import scalafx.scene.layout.HBox
 import scalafx.scene.paint.Color._
-import scalafx.scene.layout.GridPane
-import scalafx.scene.control.Label
 import scalafx.scene.input.KeyEvent
-import scalafx.scene.paint.{LinearGradient, Stops}
-import scalafx.scene.text.Text
 
 
 object GUI extends JFXApp{
