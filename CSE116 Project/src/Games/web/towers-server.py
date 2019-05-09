@@ -74,6 +74,14 @@ def key_state(jsonKeyStates):
     send_to_scala(message)
 
 
+# @app.route('/')
+# def index():
+#     return send_from_directory('static', 'index.html')
+#
+#
+# @app.route('/<path:filename>')
+# def static_files(filename):
+#     return send_from_directory('static', filename)
 @app.route('/')
 def index():
     return send_from_directory('static', 'index.html')
@@ -82,6 +90,14 @@ def index():
 @app.route('/<path:filename>')
 def static_files(filename):
     return send_from_directory('static', filename)
+
+# @app.route("/gameView.js")
+# def moving():
+#     return app.send_static_file("gameView.js")
+#
+# @app.route("/inputController.js")
+# def inputController():
+#     return app.send_static_file("inputController.js")
 
 
 print("Listening on port 8080")

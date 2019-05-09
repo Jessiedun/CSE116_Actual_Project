@@ -1,6 +1,6 @@
 package Games
 
-import Games.Physics.{PhysicsVector, World, Physics}
+import Games.Physics.{PhysicsVector, World}
 import Games.objects.Players
 import play.api.libs.json.{JsValue, Json}
 
