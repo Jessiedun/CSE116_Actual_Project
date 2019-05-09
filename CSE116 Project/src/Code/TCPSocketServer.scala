@@ -30,11 +30,7 @@ class TCPSocketServer extends Actor{
       this.webServers = this.webServers - sender()
 
     case r: Received =>
-      buffer += r.data.utf8String
-      while (buffer.contains(delimiter)) {
-        val curr = buffer.substring(0, buffer.indexOf(delimiter))
-        buffer = buffer.substring(buffer.indexOf(delimiter) + 1)
-        handleMessageFromWebServer(curr)
+      println("Received: " + r.data.utf8String)
   }
 
 
