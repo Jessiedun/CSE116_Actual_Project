@@ -28,7 +28,15 @@ class TCPSocketServer extends Actor{
     case PeerClosed =>
       println("Client Disconnected: " + sender())
       this.webServers = this.webServers - sender()
+
+    case r: Received =>
+      buffer += r.data.utf8String
+      while (buffer.contains(delimiter)) {
+        val curr = buffer.substring(0, buffer.indexOf(delimiter))
+        buffer = buffer.substring(buffer.indexOf(delimiter) + 1)
+        handleMessageFromWebServer(curr)
   }
+
 
 
 }

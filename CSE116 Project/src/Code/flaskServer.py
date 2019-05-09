@@ -42,7 +42,11 @@ Thread(target=listen_to_scala, args=(scala_socket,)).start()
 
 @app.route('/')
 def index():
-    return send_from_directory("index.html", 'index.html')
+    return send_from_directory("index.html", root="")
+
+@app.route('moving.js')
+def moving():
+    return send_from_directory('moving.js', root="")
 
 
 @app.route('/helloworld')
