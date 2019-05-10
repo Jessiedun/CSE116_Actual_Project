@@ -9,6 +9,7 @@ object Physics {
     var updatedZ = 0.0.max(obj.location.z + deltaTime * obj.velocity.z)
     new PhysicsVector(updatedX, updatedY, updatedZ)
   }
+
   def computePotentialVelocity(obj: Objects, world: World, deltaTime: Double): Unit ={
     var newVelocity = obj.velocity.z - world.gravity * deltaTime
     if(newVelocity < 0.0){
